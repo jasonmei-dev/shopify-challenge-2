@@ -14,8 +14,9 @@ const SearchBar = ({ searchMovies }) => {
   }
 
   return (
-    <div className='Search'>
+    <div className='SearchBar'>
       <form onSubmit={handleSubmit}>
+        <label htmlFor="text">Movie Title </label>
         <input type="text" name="title" value={title}onChange={handleChange}/>
         <input type="submit"/>
       </form>
