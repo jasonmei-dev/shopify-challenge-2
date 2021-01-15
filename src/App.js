@@ -1,9 +1,15 @@
+import { useState } from 'react';
 import './App.css';
+import SearchBar from './components/SearchBar';
+import Movies from './components/Movies';
 
-function App() {
+const App = () => {
+
   return (
     <div className="App">
-      <h1>Hello World</h1>
+      <h1>The Shoppies</h1>
+      <SearchBar />
+      <Movies />
     </div>
   );
 }
