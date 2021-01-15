@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
 
-const SearchBar = () => {
+const SearchBar = ({ searchMovies }) => {
   const [title, setTitle] = useState("");
 
   const handleSubmit = e => {
     e.preventDefault();
-    console.log(title);
+    searchMovies(title);
     setTitle("");
   }
 
