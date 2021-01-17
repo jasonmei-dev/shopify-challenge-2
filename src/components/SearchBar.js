@@ -1,25 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 
-const SearchBar = ({ searchMovies }) => {
-  const [title, setTitle] = useState("");
-
-  const handleSubmit = e => {
-    e.preventDefault();
-    searchMovies(title);
-    setTitle("");
-  }
-
-  const handleChange = e => {
-    setTitle(e.target.value);
-  }
+const SearchBar = ({ text, onChange }) => {
 
   return (
     <div className='SearchBar'>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="text">Movie Title </label>
-        <input type="text" name="title" value={title}onChange={handleChange}/>
-        <input type="submit"/>
-      </form>
+      <label htmlFor="text">Movie Title </label>
+      <input type="text" name="title" value={text} onChange={onChange}/>
     </div>
   )
 }

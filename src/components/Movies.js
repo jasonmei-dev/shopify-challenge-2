@@ -1,9 +1,9 @@
 import React from 'react'
 
-const Movies = ({ movies }) => {
+const Movies = ({ movies, text }) => {
   return (
     <div className="Movies">
-      <h1>Movies</h1>
+      <h2>Search Results for "{text}"</h2>
       <ul>
         {movies.map(movie => (
           <li key={movie.imdbID}>
