@@ -18,9 +18,7 @@ const App = () => {
   }
 
   useEffect(() => {
-    if (text.trim() !== "") {
-      searchMovies(text);
-    }
+    searchMovies(text);
   }, [text]);
 
   const isNominated = movie => !!nominations.find(nomination => nomination.imdbID === movie.imdbID);
@@ -40,7 +38,7 @@ const App = () => {
   return (
     <div className="App">
       <h1>The Shoppies</h1>
-      <SearchBar text={text} onChange={(e) => setText(e.target.value)} />
+      <SearchBar text={text} onChange={(e) => setText(e.target.value)} resetText={() => setText("")} />
       <Movies movies={movies} text={text} addNomination={addNomination} isNominated={isNominated} />
       <Nominations nominations={nominations} removeNomination={removeNomination} />
     </div>
