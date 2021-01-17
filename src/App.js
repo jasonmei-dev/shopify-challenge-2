@@ -13,21 +13,21 @@ const App = () => {
   const [alert, setAlert] = useState(null);
 
   useEffect(() => {
-    searchMovies(text);
-    showBanner();
-  }, [text, nominations]);
-
-  const searchMovies = async (text) => {
-    const res = await axios.get(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}&s=${text}`);
-    
-    setMovies(res.data.Search || []);
-  }
-
-  const showBanner = () => {
-    if (nominations.length === 5) {
-      showAlert("You reached the max number of nominations!", "success");
+    const searchMovies = async (text) => {
+      const res = await axios.get(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}&s=${text}`);
+      
+      setMovies(res.data.Search || []);
     }
-  }
+
+    const maxedNominations = () => {
+      if (nominations.length === 5) {
+        showAlert("You've reached the maximum number of nominations!", "success");
+      }
+    }
+
+    searchMovies(text);
+    maxedNominations();
+  }, [text, nominations]);
 
   const isNominated = movie => !!nominations.find(nomination => nomination.imdbID === movie.imdbID);
 
