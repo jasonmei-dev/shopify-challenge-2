@@ -1,7 +1,6 @@
 import React from 'react'
 
 const SearchBar = ({ text, onChange }) => {
-
   return (
     <div className='SearchBar'>
       <label htmlFor="text">Movie Title </label>
