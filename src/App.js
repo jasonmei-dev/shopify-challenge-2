@@ -15,7 +15,7 @@ const App = () => {
 
   useEffect(() => {
     const searchMovies = async (text) => {
-      const res = await axios.get(`https://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}&s=${text}`);
+      const res = await axios.get(`http://www.omdbapi.com/?apikey=${process.env.REACT_APP_OMDB_API_KEY}&s=${text}`);
       
       setMovies(res.data.Search || []);
     }
