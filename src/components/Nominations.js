@@ -2,8 +2,11 @@ import React from 'react'
 
 const Nominations = ({ nominations, removeNomination }) => {
   return (
-    <div>
+    <div className="Nominations">
       <h2>Nominations</h2>
+    { nominations.length === 0 && <h3>You haven't nominated any movies yet!</h3> }
+    
+    { nominations.length > 0 && 
       <ul>
         {nominations.map(nomination => (
           <li key={nomination.imdbID}>
@@ -11,6 +14,7 @@ const Nominations = ({ nominations, removeNomination }) => {
           </li>
         ))}
       </ul>
+    }
     </div>
   )
 }

@@ -4,8 +4,15 @@ const SearchBar = ({ text, onChange, resetText }) => {
   return (
     <div className='SearchBar'>
       <label htmlFor="text">Movie Title </label>
-      <input type="text" name="title" value={text} onChange={onChange}/>
-      <button onClick={resetText}>Reset</button>
+
+      <div className="bar">
+        <div className="box">
+          <i className="fas fa-search icon"></i>
+          <input type="text" name="title" value={text} onChange={onChange}/>
+        </div>
+
+        <button className="reset" onClick={resetText}>Reset</button>
+      </div>
     </div>
   )
 }

@@ -3,6 +3,7 @@ import SearchBar from './components/SearchBar';
 import Movies from './components/Movies';
 import Nominations from './components/Nominations';
 import Alert from './components/Alert';
+
 import axios from 'axios';
 import './App.css';
 
